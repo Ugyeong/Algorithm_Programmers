@@ -32,7 +32,7 @@ int search(vector<vector<int>> v){
 int solution(int n, vector<vector<int>> wires) {
     int answer = n;
     int a,b;
-    
+
     for(int i=0; i<wires.size(); i++){
         vector<vector<int>> tmp(n+1); //위치에 따라서 오류남
         for(int j=0; j<wires.size(); j++){
@@ -43,7 +43,6 @@ int solution(int n, vector<vector<int>> wires) {
             tmp[b].push_back(a);
         }
         answer = min(answer, search(tmp));
-        tmp.clear();
     }
     
     return answer;
